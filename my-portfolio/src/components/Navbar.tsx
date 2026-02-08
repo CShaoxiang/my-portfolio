@@ -18,7 +18,7 @@ const Navbar: React.FC = () => {
     <nav className="fixed w-full top-0 z-50 bg-background/90 backdrop-blur-md border-b border-black/10">
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <button type="button" onClick={() => scrollToSection('about')} className="text-2xl font-bold text-primary">
-          My Portfolio
+          Simon Lan's Portfolio
         </button>
 
         <div className="space-x-8 flex">

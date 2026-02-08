@@ -7,6 +7,22 @@ import './App.css';
 function App() {
   const githubUrl = 'https://github.com/';
   const linkedinUrl = 'https://www.linkedin.com/';
+  const projects = [
+    {
+      name: 'WorkMate',
+      url: 'https://github.com/Peanutix/WorkMate',
+      description:
+        'A collaborative whiteboard platform for academic teaching and learning where multiple participants join a host room. Supports physics and math equation writing/display and includes a real-time chatroom. Implemented in Python with WebSockets.',
+      tech: ['Python', 'WebSockets', 'Realtime Collaboration'],
+    },
+    {
+      name: 'EasyChat',
+      url: 'https://github.com/CShaoxiang/CS-Projects/tree/main/workspace_easychat',
+      description:
+        'An enterprise-level real-time chat application with group chat and support for sending files, images, and text. Uses Redis for caching user data and local files for improved responsiveness.',
+      tech: ['Redis', 'Realtime Messaging', 'File Transfer'],
+    },
+  ];
 
   return (
     <div className="min-h-screen w-full bg-background text-black font-sans">
@@ -41,20 +57,41 @@ function App() {
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl font-bold text-center mb-12 text-black">Projects</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <article className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
-                <h3 className="text-2xl font-semibold mb-3">Portfolio Platform</h3>
-                <p className="text-gray-700 leading-relaxed">
-                  A responsive portfolio web app focused on performance, clean component architecture, and clear visual
-                  storytelling.
-                </p>
-              </article>
-              <article className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm">
-                <h3 className="text-2xl font-semibold mb-3">Full-Stack App</h3>
-                <p className="text-gray-700 leading-relaxed">
-                  End-to-end application with REST APIs, authentication flows, and deployment automation for faster
-                  delivery.
-                </p>
-              </article>
+              {projects.map((project) => (
+                <article
+                  key={project.name}
+                  className="group relative rounded-2xl border border-white/10 bg-gray-900 p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary/70 hover:shadow-xl hover:shadow-primary/20"
+                >
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${project.name} GitHub repository`}
+                    className="absolute right-5 top-5 rounded-full p-2 text-gray-300 transition-colors hover:text-primary"
+                  >
+                    <FaGithub size={20} />
+                  </a>
+
+                  <h3 className="text-2xl font-semibold mb-4 text-white pr-10">{project.name}</h3>
+
+                  <div className="mb-6 h-44 rounded-xl border border-dashed border-gray-600 bg-gray-800/80 flex items-center justify-center">
+                    <span className="text-sm text-gray-400 tracking-wide">Project Image Placeholder</span>
+                  </div>
+
+                  <p className="text-gray-300 leading-relaxed mb-6">{project.description}</p>
+
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full bg-primary/15 text-primary px-3 py-1 text-sm font-medium border border-primary/20"
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              ))}
             </div>
           </div>
         </section>
@@ -82,7 +119,7 @@ function App() {
                   <MapPin className="text-primary" size={24} />
                   <h3 className="text-xl font-semibold">Location</h3>
                 </div>
-                <p className="text-gray-700">United States</p>
+                <p className="text-gray-700">Melbourne Australia</p>
               </div>
             </div>
 
