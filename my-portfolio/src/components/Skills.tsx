@@ -22,12 +22,12 @@ const Skills: React.FC = () => {
 
   return (
     <section id="skills" className="scroll-mt-24 py-16 md:py-20 bg-background">
-      <h2 className="text-4xl font-bold text-center mb-12 text-black">Skills & Technologies</h2>
+      <h2 className="text-reveal reveal-1 text-4xl font-bold text-center mb-12 text-black">Skills & Technologies</h2>
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
-        {categories.map((category) => (
+        {categories.map((category, index) => (
           <div
             key={category.title}
-            className="bg-surface border border-white/5 p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300"
+            className={`text-reveal reveal-${(index % 4) + 1} bg-surface border border-white/5 p-8 rounded-2xl hover:-translate-y-2 transition-transform duration-300`}
           >
             <div className="bg-white/10 w-16 h-16 rounded-lg flex items-center justify-center mb-6">
               {category.icon}

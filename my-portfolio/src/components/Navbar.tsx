@@ -17,7 +17,11 @@ const Navbar: React.FC = () => {
   return (
     <nav className="fixed w-full top-0 z-50 bg-background/90 backdrop-blur-md border-b border-black/10">
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        <button type="button" onClick={() => scrollToSection('about')} className="text-2xl font-bold text-primary">
+        <button
+          type="button"
+          onClick={() => scrollToSection('about')}
+          className="text-reveal reveal-1 text-2xl font-bold text-primary"
+        >
           Simon Lan's Portfolio
         </button>
 
@@ -27,7 +31,7 @@ const Navbar: React.FC = () => {
               type="button"
               key={item.sectionId}
               onClick={() => scrollToSection(item.sectionId)}
-              className="cursor-pointer transition-colors text-black hover:text-primary font-medium"
+              className="text-reveal reveal-2 cursor-pointer transition-colors text-black hover:text-primary font-medium"
             >
               {item.label}
             </button>

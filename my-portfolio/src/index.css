@@ -22,3 +22,42 @@ body {
   background-color: #ffffff;
   color: #111111;
 }
+
+@keyframes textReveal {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-reveal {
+  opacity: 0;
+  animation: textReveal 0.75s ease-out forwards;
+}
+
+.reveal-1 {
+  animation-delay: 0.08s;
+}
+
+.reveal-2 {
+  animation-delay: 0.2s;
+}
+
+.reveal-3 {
+  animation-delay: 0.34s;
+}
+
+.reveal-4 {
+  animation-delay: 0.48s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-reveal {
+    opacity: 1;
+    animation: none;
+  }
+}
